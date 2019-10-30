@@ -17,4 +17,17 @@ before_script:
 script:
   - ng lint
   - ng test --watch=false
-  - ng build --prod 
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: bash scripts/deploy.sh latest
+    on:
+      branch: master
+
+  - provider: script
+    skip_cleanup: true
+    script: bash scripts/deploy.sh release
+    on:
+      branch: release
+
