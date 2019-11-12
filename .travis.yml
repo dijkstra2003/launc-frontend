@@ -18,16 +18,27 @@ script:
   - ng lint
   - ng test --watch=false
 
+addons:
+  ssh_known_hosts:
+    - launc.space
+    - dev.launc.space
+
+before_deploy:
+  - openssl aes-256-cbc -K $encrypted_29e790ce9544_key -iv $encrypted_29e790ce9544_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 /tmp/deploy_rsa
+  - ssh-add /tmp/deploy_rsa
+
 deploy:
   - provider: script
     skip_cleanup: true
-    script: bash scripts/deploy.sh latest
+    script: bash scripts/deploy.sh latest \
+            && ssh -t launc@dev.launc.space "bash docker/deploy_accept.sh"
     on:
       branch: master
-
   - provider: script
     skip_cleanup: true
-    script: bash scripts/deploy.sh release
+    script: bash scripts/deploy.sh release \
+            && ssh -t launc@launc.space "bash docker/deploy_prod.sh"
     on:
       branch: release
-
