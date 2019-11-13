@@ -1,1 +1,1 @@
-export const routes = {apiHostname: 'http://localhost/'}
+export const routes = {apiHostname: 'http://localhost:5000/'};
