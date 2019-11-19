@@ -10,10 +10,10 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    document.querySelector('.background-img__btn').addEventListener('click', function() {
-      document.querySelector('.login').classList.toggle('s--signup');
-    });
+    document.querySelectorAll('.js-target').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelector('.login').classList.toggle('s--signup');
+      })
+    })
   }
-  
-  
 }
