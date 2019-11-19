@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
     document.querySelectorAll('.js-target').forEach((button) => {
       button.addEventListener('click', () => {
         document.querySelector('.login').classList.toggle('s--signup');
-      })
-    })
+      });
+    });
   }
 }
