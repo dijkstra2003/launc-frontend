@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./shared/variables.scss";
+
+body {
+    background-color: $white !important;
+}
+
+button {
+    cursor: pointer;
+    color: #ffffff;
+}
+
+input, button {
+    border: none;
+    outline: none;
+    background: none;
+}
