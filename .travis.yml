@@ -11,12 +11,18 @@ branches:
 
 before_script:
   - npm install -g @angular/cli
+  - npm install -g sonarqube-scanner
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
 script:
   - ng lint
   - ng test --watch=false
+  - sonar-scanner
+    -Dsonar.projectKey=launc-frontend
+    -Dsonar.sources=.
+    -Dsonar.host.url=http://dev.launc.space:9000
+    -Dsonar.login=450c5438cf9fa7c3ec22fbe47dca4e7936a0f32a
 
 addons:
   ssh_known_hosts:

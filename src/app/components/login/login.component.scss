@@ -1,0 +1,61 @@
+.login-container {
+    height: 100vh;
+    display: flex;
+}
+
+@media screen and (max-width: 992px) {
+    $contW: 700px;
+    $imgW: 350px;
+    $formW: $contW - $imgW;
+    $switchAT: 1s;
+
+    $inputW: 220px;
+    $btnH: 36px;
+
+    $diffRatio: ($contW - $imgW) / $contW;
+    @import "./login.scss";
+}
+
+@media screen and (max-width: 768px) {
+    $contW: 576px;
+    $imgW: 288px;
+    $formW: $contW - $imgW;
+    $switchAT: 1s;
+
+    $inputW: 200px;
+    $btnH: 36px;
+
+    $diffRatio: ($contW - $imgW) / $contW;
+    @import "./login.scss";
+}
+
+@media screen and (max-width: 576px) {
+    $contW: 300px;
+    $imgW: 0px;
+    $formW: $contW - $imgW;
+    $switchAT: 0.7s;
+
+    $inputW: 220px;
+    $btnH: 36px;
+
+    $diffRatio: ($contW - $imgW) / $contW;
+    @import "./login.scss";
+
+    .trigger {
+        display: block !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    $contW: 900px;
+    $imgW: 450px;
+    $formW: $contW - $imgW;
+    $switchAT: 1s;
+
+    $inputW: 260px;
+    $btnH: 36px;
+
+    $diffRatio: ($contW - $imgW) / $contW;
+    @import "./login.scss";
+}
+
