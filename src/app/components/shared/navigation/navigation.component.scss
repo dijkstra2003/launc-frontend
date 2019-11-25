@@ -3,6 +3,11 @@
 
 .nav-link {
     color: $red_bright;
+    outline: none;
+}
+
+.navbar-brand {
+    outline: none;
 }
 
 .nav-link:hover {
