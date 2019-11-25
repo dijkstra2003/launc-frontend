@@ -9,8 +9,13 @@ describe('NavigationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FontAwesomeModule],
-      declarations: [ NavigationComponent, RouterTestingModule ]
+      imports: [
+        FontAwesomeModule,
+        RouterTestingModule
+      ],
+      declarations: [
+        NavigationComponent
+      ]
     })
     .compileComponents();
   }));
