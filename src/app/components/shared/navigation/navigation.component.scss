@@ -1,0 +1,31 @@
+// Styling for the navigation
+@import "../../../../shared/variables.scss";
+
+.nav-link {
+    color: $red_bright;
+    outline: none;
+}
+
+.navbar-brand {
+    outline: none;
+}
+
+.nav-link:hover {
+    color: $red;
+}
+
+.navbar-toggler {
+    color: $red_bright;
+}
+
+@media (min-width: 768px) {
+    .responsive {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .normal {
+        display: none;
+    }
+}
