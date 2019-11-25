@@ -8,10 +8,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
 
+  faSearch = faSearch;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  faSearch = faSearch;
 }
