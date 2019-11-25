@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,6 +6,12 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
+
+@NgModule({
+  declarations: [NavigationComponent],
+  exports: [NavigationComponent]
+})
+
 export class NavigationComponent implements OnInit {
 
   faBars = faBars;

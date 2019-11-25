@@ -20,10 +20,6 @@ import { HeaderComponent } from './components/shared/header/header.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NavigationComponent
-  ],
-  exports: [
-    NavigationComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
