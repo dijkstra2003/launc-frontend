@@ -5,22 +5,22 @@
                     <fa-icon [icon]="faBars"></fa-icon>
             </span>
         </button>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" [routerLink]="['/']">
             <span class="navbar-brand mb-0 h1"><img src="../../../../assets/logo-los.png" width="40" height="40" alt="launc-logo"></span>
         </a>     
         <ul class="nav navbar-nav navbar-right responsive">
-                <a class="nav-link" href="#">sign in</a>
+                <a class="nav-link" [routerLink]="['/login']">sign in</a>
         </ul>
         <div class="collapse navbar-collapse" id="navbartoggle">   
             <ul class="navbar-nav nav">
-                <a class="nav-link" href="#">home</a>
-                <a class="nav-link" href="#">projects</a>
-                <a class="nav-link" href="#">menu item 3</a>
-                <a class="nav-link" href="#">menu item 4</a>
+                <a class="nav-link" [routerLink]="['/']">home</a>
+                <a class="nav-link" [routerLink]="['/']">projects</a>
+                <a class="nav-link" [routerLink]="['/']">menu item 3</a>
+                <a class="nav-link" [routerLink]="['/']">menu item 4</a>
             </ul>
         </div>
         <ul class="nav navbar-nav navbar-right normal">
-                <a class="nav-link" href="/login">sign in</a>
+                <a class="nav-link" [routerLink]="['/login']">sign in</a>
         </ul>
     </div>
 </nav>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,10 +9,16 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
 
   faSearch = faSearch;
+  @ViewChild("autofocus", {static: false}) autofocus: ElementRef;
 
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  ngAfterViewInit(): void {
+    this.autofocus.nativeElement.focus();    
   }
 
 }
