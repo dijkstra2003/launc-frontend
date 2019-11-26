@@ -88,7 +88,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.6);
+        background: rgba(0,0,0,0.2);
     }
 
     @include signUpActive {
@@ -225,8 +225,13 @@ input {
 .submit {
     margin-top: 30px !important;
     margin-bottom: 20px;
-    background: $red;
+    background: $red_bright;
     text-transform: uppercase;
+    transition: all 0.25s;
+}
+
+.submit:hover {
+    background: darken($red_bright, 10%);
 }
 
 .fb-btn {

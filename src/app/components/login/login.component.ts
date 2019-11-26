@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
 
   constructor() { }
+
+  @ViewChild('email', {static: false}) email: ElementRef;
 
   ngOnInit() {
     document.querySelectorAll('.js-target').forEach((button) => {
@@ -15,5 +17,9 @@ export class LoginComponent implements OnInit {
         document.querySelector('.login').classList.toggle('s--signup');
       });
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.email.nativeElement.focus();
   }
 }

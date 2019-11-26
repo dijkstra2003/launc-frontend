@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavigationComponent } from './navigation.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('NavigationComponent', () => {
   let component: NavigationComponent;
@@ -8,8 +9,13 @@ describe('NavigationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FontAwesomeModule],
-      declarations: [ NavigationComponent ]
+      imports: [
+        FontAwesomeModule,
+        RouterTestingModule
+      ],
+      declarations: [
+        NavigationComponent
+      ]
     })
     .compileComponents();
   }));

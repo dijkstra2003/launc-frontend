@@ -4,14 +4,17 @@
 .nav-link {
     color: $red_bright;
     outline: none;
+    transition: all 0.25s;
 }
 
 .navbar-brand {
     outline: none;
+    padding-right: 20px;
+    margin-right: 0;
 }
 
 .nav-link:hover {
-    color: $red;
+    color: darken($red_bright, 15%);
 }
 
 .navbar-toggler {
@@ -27,5 +30,9 @@
 @media (max-width: 768px) {
     .normal {
         display: none;
+    }
+
+    .navbar-brand {
+        padding-right: 0;
     }
 }
