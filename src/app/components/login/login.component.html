@@ -4,14 +4,14 @@
       <h2>Welcome back</h2>
       <label>
         <span>Email</span>
-        <input/>
+        <input #username/>
       </label>
       <label>
         <span>Password</span>
-        <input type="password" />
+        <input #password type="password" />
       </label>
       <p class="forgot-pass">Forgot password?</p>
-      <button type="button" class="submit">Sign In</button>
+      <button type="button" class="submit" (click)="login(username.value, password.value)">Sign In</button>
       <button type="button" class="submit trigger js-target">REGISTER</button>
     </div>
     <div class="signup">
