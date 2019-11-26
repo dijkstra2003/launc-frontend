@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="home-cards">
     <div class="row">
-        <div class="col-md-6 row-item" *ngFor="let project of projects | slice:0:8">
+        <div class="col-md-6 row-item" *ngFor="let project of projects | filter:searchText">
             <app-project-card-small 
                 title={{project.title}}
                 description={{project.description}}

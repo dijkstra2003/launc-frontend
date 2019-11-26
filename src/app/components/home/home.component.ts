@@ -1,10 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
+@Pipe({
+  name: 'filter',
+  pure: false
+})
+
 export class HomeComponent implements OnInit {
 
   projects = [
@@ -48,7 +54,7 @@ export class HomeComponent implements OnInit {
       description: "a random description for a project",
       logoSrc: "/assets/logo-los.png"
     }
-  ]
+  ];
   
   constructor() { }
 

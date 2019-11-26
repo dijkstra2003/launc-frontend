@@ -9,6 +9,8 @@ import { NavigationComponent } from './components/shared/navigation/navigation.c
 import { HeaderComponent } from './components/shared/header/header.component';
 import { ProjectCardSmallComponent } from './components/project/project-card-small/project-card-small.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { FilterPipe } from '../shared/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     HeaderComponent,
     ProjectCardSmallComponent,
     FooterComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
