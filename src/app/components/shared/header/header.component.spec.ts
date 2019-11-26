@@ -13,7 +13,7 @@ describe('HeaderComponent', () => {
         FontAwesomeModule,
         FormsModule
       ],
-      declarations: [ 
+      declarations: [
         HeaderComponent,
       ]
     })

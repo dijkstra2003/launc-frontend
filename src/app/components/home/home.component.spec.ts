@@ -17,9 +17,9 @@ describe('HomeComponent', () => {
         FontAwesomeModule,
         FormsModule
       ],
-      declarations: [ 
-        HomeComponent, 
-        HeaderComponent, 
+      declarations: [
+        HomeComponent,
+        HeaderComponent,
         FooterComponent,
         HomeComponent,
         ProjectCardSmallComponent,
