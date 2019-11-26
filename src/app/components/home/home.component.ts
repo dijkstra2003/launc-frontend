@@ -27,6 +27,26 @@ export class HomeComponent implements OnInit {
       title: "fourth project",
       description: "a random description for a project",
       logoSrc: "/assets/logo-los.png"
+    },
+    {
+      title: "first project",
+      description: "a random description for a project",
+      logoSrc: "/assets/logo-los.png"
+    },
+    {
+      title: "second project",
+      description: "a random description for a project",
+      logoSrc: "/assets/logo-los.png"
+    },
+    {
+      title: "third project",
+      description: "a random description for a project",
+      logoSrc: "/assets/logo-los.png"
+    },
+    {
+      title: "fourth project",
+      description: "a random description for a project",
+      logoSrc: "/assets/logo-los.png"
     }
   ]
   
