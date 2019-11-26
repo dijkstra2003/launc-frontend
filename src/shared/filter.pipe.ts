@@ -3,10 +3,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'filter'
 })
+
 export class FilterPipe implements PipeTransform {
 
   transform(projects: any, ...searchTerm: string[]): any {
-    if(!projects || !searchTerm) {
+    if (!projects || !searchTerm) {
       return projects;
     }
 
