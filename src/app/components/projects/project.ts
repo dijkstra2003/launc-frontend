@@ -3,4 +3,5 @@ export class Project {
     ownerId:number;
     name: string;
     description:string;
+    productImage:string;
   }
