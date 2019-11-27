@@ -1,25 +1,36 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/authentication/authentication.service';
+
+export interface User {
+  token?: string;
+  firstName: string;
+  lastName: string;
+  username: string;
+}
+
 @Component({
   selector: 'app-login',
+  templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, AfterViewInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private http: HttpClient) { }
 
   @ViewChild('email', {static: false}) email: ElementRef;
 
   login(username, password) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-      })
-    };
-    this.http.post('http://localhost:20450/users/authenticate', {username, password}, httpOptions).subscribe(e => {
-      console.log(e);
-    }, err => {
-      console.log(err);
+    this.authenticationService.authenticateUser(username, password).subscribe(success => {
+      const response: User = success as User;
+      localStorage.setItem('token', response.token);
+      localStorage.setItem('username', response.username);
+      this.authenticationService.updateState(true);
+      //  TODO - redirect
+    }, error => {
+
     });
   }
 
