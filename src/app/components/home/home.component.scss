@@ -1,1 +1,18 @@
 // styling file for the home component
+.row-item {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .row {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-cards {
+        margin-top: 30px;
+        width: 90%;
+        margin-left: 5%;
+    }
+}

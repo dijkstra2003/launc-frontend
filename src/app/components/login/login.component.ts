@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
 
   constructor(private http: HttpClient) { }
+
+  @ViewChild('email', {static: false}) email: ElementRef;
 
   login(username, password) {
     const httpOptions = {
@@ -28,5 +29,9 @@ export class LoginComponent implements OnInit {
         document.querySelector('.login').classList.toggle('s--signup');
       });
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.email.nativeElement.focus();
   }
 }

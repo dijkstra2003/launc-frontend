@@ -1,0 +1,24 @@
+.project-card-small {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;    
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project-card-small p{
+    margin: auto;
+    vertical-align: middle;
+}
+
+.project-card-small img{
+    margin: auto;
+
+}
+
+@media (max-width: 768px) {
+    .project-card-small {
+        margin-top: 12px;
+    }
+}
