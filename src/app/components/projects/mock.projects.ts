@@ -1,4 +1,4 @@
-import { Project } from './Project';
+import { Project } from './project';
 
 export const PROJECTS: Project[] = [
   { id: 1, ownerId:11, name: 'Project Razor', description:'Manly razors for manly men', productImage:'https://live.staticflickr.com/863/26997811937_194a4cf96e_b.jpg'},
