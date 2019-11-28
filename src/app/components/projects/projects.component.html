@@ -1,14 +1,9 @@
-<h2>Projects</h2>
-<span></span>
-<ul style="list-style-type:none;" class="projects">
-  <li *ngFor="let project of projects">
-      <div class="card" style="width: 18rem;">
-          <img src={{project.productImage}} class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{project.name}}</h5>
-            <p class="card-text">{{project.description}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-      </div>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-12  col-md-6 col-lg-4 mt-3" *ngFor="let project of projects">
+      <app-project-card class="jfkdsla" 
+        projectName={{project.name}}
+        projectDescription={{project.description}}
+        projectImage={{project.productImage}}
+      ></app-project-card>
+  </div>
+</div>
