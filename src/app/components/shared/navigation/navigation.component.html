@@ -20,7 +20,7 @@
             </ul>
         </div>
         <ul class="nav navbar-nav navbar-right normal">
-            <a class="nav-link" *ngIf="(isLoggedIn | async); else loggedIn;" [routerLink]="['/login']">sign in</a>
+            <a class="nav-link" *ngIf="(isLoggedIn | async) === false; else loggedIn;" [routerLink]="['/login']">sign in</a>
             <ng-template #loggedIn>
                 <a class="nav-link" href="#">logged in as {{userName}}</a>
                 <p class="nav-link" (click)="logout()">logout</p>

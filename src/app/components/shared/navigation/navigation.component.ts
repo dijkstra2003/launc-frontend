@@ -22,9 +22,7 @@ export class NavigationComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService) {
     this.isLoggedIn = this.authenticationService.isLoggedInState;
-    this.isLoggedIn.subscribe(e => {
-      console.log(e);
-    });
+    this.userName = localStorage.getItem('username');
   }
 
   //  not for future use just to start.
@@ -32,6 +30,7 @@ export class NavigationComponent implements OnInit {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     window.location.reload();
+    this.authenticationService.updateState(false);
   }
 
   ngOnInit() {

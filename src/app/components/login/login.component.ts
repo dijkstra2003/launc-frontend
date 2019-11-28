@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       const response: User = success as User;
       localStorage.setItem('token', response.token);
       localStorage.setItem('username', response.username);
+      console.log(success);
       this.authenticationService.updateState(true);
       //  TODO - redirect
     }, error => {
