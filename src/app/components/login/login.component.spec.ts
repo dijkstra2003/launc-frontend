@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LoginComponent } from './login.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { AuthenticationService } from 'src/app/authentication/authentication.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -8,6 +10,7 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule, HttpClientModule],
       declarations: [ LoginComponent ]
     })
     .compileComponents();
@@ -19,6 +22,10 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
+  it('should have auth service', () => {
+    const service: AuthenticationService = TestBed.get(AuthenticationService);
+    expect(service.authenticateUser).toBeTruthy();
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

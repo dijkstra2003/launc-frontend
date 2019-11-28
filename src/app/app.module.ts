@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { ProjectCardSmallComponent } from './components/project/project-card-small/project-card-small.component';
@@ -26,10 +27,11 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

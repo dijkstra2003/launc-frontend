@@ -13,7 +13,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   faSearch = faSearch;
   @ViewChild('autofocus', {static: false}) autofocus: ElementRef;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
 
