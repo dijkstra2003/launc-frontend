@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CampaignCardComponent } from './campaign-card/campaign-card.component';
 import { CampaignsPageComponent } from './campaigns-page.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CampaignsPageComponent', () => {
   let component: CampaignsPageComponent;
@@ -8,7 +9,13 @@ describe('CampaignsPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CampaignsPageComponent ]
+      imports: [
+        RouterTestingModule
+      ],
+      declarations: [ 
+        CampaignsPageComponent,
+        CampaignCardComponent,
+      ]
     })
     .compileComponents();
   }));

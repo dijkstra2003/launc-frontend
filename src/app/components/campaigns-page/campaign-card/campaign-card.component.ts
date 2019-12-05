@@ -6,14 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./campaign-card.component.scss']
 })
 export class CampaignCardComponent implements OnInit {
-    
+
   @Input() campaignName: string;
   @Input() campaignDescription: string;
   @Input() campaignImage: string;
   @Input() campaignUrl: string;
 
-  constructor() { 
-    
+  constructor() {
+
   }
 
   ngOnInit() {
