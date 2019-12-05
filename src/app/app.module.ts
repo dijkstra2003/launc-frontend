@@ -12,6 +12,8 @@ import { ProjectCardSmallComponent } from './components/project/project-card-sma
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { FilterPipe } from '../shared/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { CampaignCardComponent } from './components/campaigns-page/campaign-card/campaign-card.component';
+import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ProjectCardSmallComponent,
     FooterComponent,
-    FilterPipe
+    FilterPipe,
+    CampaignsPageComponent,
+    CampaignCardComponent
   ],
   imports: [
     BrowserModule,
