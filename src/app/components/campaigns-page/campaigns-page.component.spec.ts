@@ -12,7 +12,7 @@ describe('CampaignsPageComponent', () => {
       imports: [
         RouterTestingModule
       ],
-      declarations: [ 
+      declarations: [
         CampaignsPageComponent,
         CampaignCardComponent,
       ]
