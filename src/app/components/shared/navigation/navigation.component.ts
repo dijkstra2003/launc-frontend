@@ -1,5 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { AuthenticationService } from 'src/app/authentication/authentication.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
@@ -15,8 +17,21 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class NavigationComponent implements OnInit {
 
   faBars = faBars;
+  isLoggedIn: Observable<boolean>;
+  userName: string;
 
-  constructor() { }
+  constructor(private authenticationService: AuthenticationService) {
+    this.isLoggedIn = this.authenticationService.isLoggedInState;
+    this.userName = localStorage.getItem('username');
+  }
+
+  //  not for future use just to start.
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    window.location.reload();
+    this.authenticationService.updateState(false);
+  }
 
   ngOnInit() {
   }
