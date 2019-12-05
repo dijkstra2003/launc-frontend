@@ -8,12 +8,12 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
 import { HeaderComponent } from './components/shared/header/header.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { ProjectCardComponent } from './components/projects/project-card/project-card.component';
 import { ProjectCardSmallComponent } from './components/project/project-card-small/project-card-small.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { FilterPipe } from '../shared/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { CampaignCardComponent } from './components/campaigns-page/campaign-card/campaign-card.component';
+import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,11 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     NavigationComponent,
     HeaderComponent,
-    ProjectsComponent,
-    ProjectCardComponent,
     ProjectCardSmallComponent,
     FooterComponent,
-    FilterPipe
+    FilterPipe,
+    CampaignsPageComponent,
+    CampaignCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-export class Project {
+export class Campaign {
     id: number;
     ownerId:number;
     name: string;
