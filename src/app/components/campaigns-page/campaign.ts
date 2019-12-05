@@ -4,4 +4,5 @@ export class Campaign {
     name: string;
     description:string;
     productImage:string;
+    url:string
   }

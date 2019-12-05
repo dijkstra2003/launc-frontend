@@ -10,6 +10,7 @@ export class CampaignCardComponent implements OnInit {
   @Input() campaignName: string;
   @Input() campaignDescription: string;
   @Input() campaignImage: string;
+  @Input() campaignUrl: string;
 
   constructor() { 
     

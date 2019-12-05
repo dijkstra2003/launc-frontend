@@ -1,3 +1,5 @@
+@import './src/shared/variables.scss';
+
 .card {
     height: 100%;  
 }
@@ -6,4 +8,13 @@
     max-height: 200px;
     min-height: 150px;
     object-fit: cover;
+}
+
+.campaign-button {
+    background-color: $red_bright;
+    color: $white;
+}
+
+.campaign-button:hover {
+    background-color: darken($red_bright, 10%);
 }
