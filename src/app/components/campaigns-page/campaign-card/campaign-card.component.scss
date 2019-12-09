@@ -10,6 +10,12 @@
     object-fit: cover;
 }
 
+.card-text{
+    overflow-y: hidden;
+    height: 150px;
+    text-overflow: ellipsis;
+}
+
 .campaign-button {
     background-color: $red_bright;
     color: $white;
