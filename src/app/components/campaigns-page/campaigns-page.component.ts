@@ -1,4 +1,4 @@
-import { CAMPAIGNS } from './campaign-page.service';
+import { CampaignPageService } from './campaign-page.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CampaignsPageComponent implements OnInit {
 
-  campaigns = CAMPAIGNS;
+  campaigns;
 
-  constructor() { }
+  constructor(campaignService: CampaignPageService) {
+    this.campaigns = campaignService.campaignList
+   }
 
   ngOnInit() {
   }
