@@ -8,7 +8,7 @@ export class CampaignPageService {
 
   campaignList: any;
 
-  constructor(http : HttpClient) { 
+  constructor(private http : HttpClient) { 
     http.get('https://jsonplaceholder.typicode.com/posts').subscribe(response =>{
       this.campaignList = response;
     });
