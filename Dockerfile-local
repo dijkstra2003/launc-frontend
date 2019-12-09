@@ -8,4 +8,4 @@ COPY . .
 RUN npm install
 RUN npm install -g @angular/cli 
 
-ENTRYPOINT ng serve --port 4200 --host 0.0.0.0
+ENTRYPOINT ng serve --port 4200 --host 0.0.0.0 --poll 200 --disable-host-check
