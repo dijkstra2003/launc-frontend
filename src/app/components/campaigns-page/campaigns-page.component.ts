@@ -10,11 +10,11 @@ export class CampaignsPageComponent implements OnInit {
 
   campaigns;
 
-  constructor(campaignService: CampaignPageService) {
-    this.campaigns = campaignService.campaignList
-   }
+  constructor(private campaignService: CampaignPageService) {}
 
   ngOnInit() {
+    this.campaignService.getCampaigns().subscribe(response => {
+      this.campaigns = response  
+    });
   }
-
 }

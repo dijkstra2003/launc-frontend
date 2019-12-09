@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -6,11 +7,12 @@ import { Injectable } from '@angular/core';
 })
 export class CampaignPageService {
 
-  campaignList: any;
+  readonly campaignDbUrl = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http : HttpClient) { 
-    http.get('https://jsonplaceholder.typicode.com/posts').subscribe(response =>{
-      this.campaignList = response;
-    });
+  constructor(private http : HttpClient) { }
+
+  getCampaigns(): Observable<any[]> {
+    return this.http.get<any[]>(this.campaignDbUrl)
   }
+
 }
