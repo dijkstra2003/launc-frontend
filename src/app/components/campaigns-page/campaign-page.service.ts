@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class CampaignPageService {
 
   campaignList: any;
-
+  
   constructor(private http : HttpClient) { 
     http.get('https://jsonplaceholder.typicode.com/posts').subscribe(response =>{
       this.campaignList = response;
