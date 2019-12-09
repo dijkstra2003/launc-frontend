@@ -7,12 +7,12 @@ import { Injectable } from '@angular/core';
 })
 export class CampaignPageService {
 
-  readonly campaignDbUrl = 'https://jsonplaceholder.typicode.com/posts';
+  readonly campaignsDbUrl = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http : HttpClient) { }
 
   getCampaigns(): Observable<any[]> {
-    return this.http.get<any[]>(this.campaignDbUrl)
+    return this.http.get<any[]>(this.campaignsDbUrl)
   }
 
 }
