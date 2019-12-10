@@ -9,10 +9,10 @@ export class CampaignPageService {
 
   readonly campaignsDbUrl = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getCampaigns(): Observable<any[]> {
-    return this.http.get<any[]>(this.campaignsDbUrl)
+    return this.http.get<any[]>(this.campaignsDbUrl);
   }
 
 }

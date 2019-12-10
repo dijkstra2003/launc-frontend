@@ -14,7 +14,7 @@ export class CampaignsPageComponent implements OnInit {
 
   ngOnInit() {
     this.campaignService.getCampaigns().subscribe(response => {
-      this.campaigns = response  
+      this.campaigns = response;
     });
   }
 }
