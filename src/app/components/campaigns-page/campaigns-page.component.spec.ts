@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CampaignCardComponent } from './campaign-card/campaign-card.component';
 import { CampaignsPageComponent } from './campaigns-page.component';
@@ -10,7 +11,8 @@ describe('CampaignsPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientTestingModule
       ],
       declarations: [
         CampaignsPageComponent,

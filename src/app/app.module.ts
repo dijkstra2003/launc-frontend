@@ -1,3 +1,4 @@
+import { CampaignPageService } from './components/campaigns-page/campaign-page.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -35,7 +36,10 @@ import { CampaignsPageComponent } from './components/campaigns-page/campaigns-pa
     FontAwesomeModule,
     FormsModule,
   ],
-  providers: [HttpClientModule],
+  providers: [
+    HttpClientModule,
+    CampaignPageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
