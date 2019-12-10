@@ -1,4 +1,4 @@
-import { CampaignPageService } from './campaign-page.service';
+import { CampaignsPageService as CampaignsPageService } from './campaigns-page.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,10 +10,10 @@ export class CampaignsPageComponent implements OnInit {
 
   campaigns;
 
-  constructor(private campaignService: CampaignPageService) {}
+  constructor(private campaignsPageService: CampaignsPageService) {}
 
   ngOnInit() {
-    this.campaignService.getCampaigns().subscribe(response => {
+    this.campaignsPageService.getCampaigns().subscribe(response => {
       this.campaigns = response;
     });
   }

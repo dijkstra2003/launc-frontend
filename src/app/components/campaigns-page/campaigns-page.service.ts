@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class CampaignPageService {
+export class CampaignsPageService {
 
   readonly campaignsDbUrl = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -15,4 +15,5 @@ export class CampaignPageService {
     return this.http.get<any[]>(this.campaignsDbUrl);
   }
 
+  
 }

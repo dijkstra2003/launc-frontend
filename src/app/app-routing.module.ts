@@ -1,3 +1,4 @@
+import { CampaignDetailsComponent } from './components/campaign-details/campaign-details.component';
 import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -7,7 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'projects', component: CampaignsPageComponent},
+  { path: 'campaigns', component: CampaignsPageComponent},
+  {path: 'campaign/:campaignId', component: CampaignDetailsComponent},
   { path: '', component: HomeComponent }
 ];
 

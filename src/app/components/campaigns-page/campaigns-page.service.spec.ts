@@ -1,8 +1,8 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, async } from '@angular/core/testing';
-import { CampaignPageService } from './campaign-page.service';
+import { CampaignsPageService } from './campaigns-page.service';
 
-describe('CampaignPageService', () => {
+describe('CampaignsPageService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   beforeEach(async(() => {
@@ -17,7 +17,7 @@ describe('CampaignPageService', () => {
   }));
 
   it('should be created', () => {
-    const service: CampaignPageService = TestBed.get(CampaignPageService);
+    const service: CampaignsPageService = TestBed.get(CampaignsPageService);
     expect(service).toBeTruthy();
   });
 });

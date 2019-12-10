@@ -1,4 +1,4 @@
-import { CampaignPageService } from './components/campaigns-page/campaign-page.service';
+import { CampaignsPageService } from './components/campaigns-page/campaigns-page.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -15,6 +15,7 @@ import { FilterPipe } from '../shared/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { CampaignCardComponent } from './components/campaigns-page/campaign-card/campaign-card.component';
 import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
+import { CampaignDetailsComponent } from './components/campaign-details/campaign-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CampaignsPageComponent } from './components/campaigns-page/campaigns-pa
     FooterComponent,
     FilterPipe,
     CampaignsPageComponent,
-    CampaignCardComponent
+    CampaignCardComponent,
+    CampaignDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { CampaignsPageComponent } from './components/campaigns-page/campaigns-pa
   ],
   providers: [
     HttpClientModule,
-    CampaignPageService
+    CampaignsPageService
   ],
   bootstrap: [AppComponent]
 })
