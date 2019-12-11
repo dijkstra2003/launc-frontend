@@ -25,10 +25,11 @@ export class CampaignDetailsComponent implements OnInit {
 
   getCampaign(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.campaignsService.getCampaign(id).subscribe(responseDb =>{ 
+    this.campaignsService.<<<< HEAD
+importmign().subscribe(responseDb =>{ 
       const responsePlaceholder = [];
       responsePlaceholder.push(responseDb);
-      responsePlaceholder.find(campaign => campaignModel === campaign);
+      responsePlaceholder.find(campaign =>  {this.campaignModel === campaign);
   });
   }
 }

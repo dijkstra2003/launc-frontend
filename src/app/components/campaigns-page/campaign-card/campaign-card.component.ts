@@ -11,6 +11,7 @@ export class CampaignCardComponent implements OnInit {
   @Input() campaignDescription: string;
   @Input() campaignImage: string;
   @Input() campaignUrl: string;
+  @Input() campaignId: number;
 
   constructor() {
 

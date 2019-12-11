@@ -1,7 +1,8 @@
-import { CampaignModel } from 'src/app/models/campaign-model';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map, find } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CampaignModel } from 'src/app/models/campaign';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,8 @@ export class CampaignsPageService {
   getCampaigns(): Observable<CampaignModel[]> {
     return this.http.get<CampaignModel[]>(this.campaignsDbUrl);
   }
-
-  getCampaign(id: number): Observable<CampaignModel>{
-    
-    return this.http.get<CampaignModel>(this.campaignsDbUrl);
-    
-  }
+  
+  getSingleCampaign(): Observable<any[]>{
+    return this.http.get<any[]>(this.campaignsDbUrl);
+  } 
 }
