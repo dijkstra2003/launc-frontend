@@ -1,4 +1,3 @@
-import { CampaignModel } from 'src/app/models/campaign-model';
 import { CampaignsPageService } from './components/campaigns-page/campaigns-page.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -30,8 +29,7 @@ import { CampaignDetailsComponent } from './components/campaign-details/campaign
     FilterPipe,
     CampaignsPageComponent,
     CampaignCardComponent,
-    CampaignDetailsComponent,
-    CampaignModel
+    CampaignDetailsComponent
   ],
   imports: [
     BrowserModule,

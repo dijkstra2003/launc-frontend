@@ -2,7 +2,6 @@ import { CampaignsPageService } from './../campaigns-page/campaigns-page.service
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import {CampaignModel} from 'src/app/models/campaign-model'
 
 
 @Component({
@@ -12,7 +11,7 @@ import {CampaignModel} from 'src/app/models/campaign-model'
 })
 export class CampaignDetailsComponent implements OnInit {
 
-  campaignModel : CampaignModel;
+  campaign;
   
   constructor(
     private route: ActivatedRoute,
@@ -23,13 +22,11 @@ export class CampaignDetailsComponent implements OnInit {
     this.getCampaign();
   }
 
-  getCampaign(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.campaignsService.<<<< HEAD
-importmign().subscribe(responseDb =>{ 
-      const responsePlaceholder = [];
-      responsePlaceholder.push(responseDb);
-      responsePlaceholder.find(campaign =>  {this.campaignModel === campaign);
-  });
+  getCampaign() {
+    const id = +this.route.snapshot.paramMap.get('campaignId');
+    const obj: any = this.campaignsService.getSingleCampaign().subscribe(campaignArray => {
+      campaignArray.find(response => response === id);
+    });
+    return obj;
   }
 }
