@@ -2,6 +2,7 @@ import { CampaignsPageService } from './../campaigns-page/campaigns-page.service
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { find, map, filter } from 'rxjs/operators';
 
 
 @Component({
@@ -10,6 +11,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./campaign-details.component.scss']
 })
 export class CampaignDetailsComponent implements OnInit {
+
+  campaign;
   
   constructor(
     private route: ActivatedRoute,
@@ -17,7 +20,15 @@ export class CampaignDetailsComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    
+    this.getCampaign();
+    console.log(this.getCampaign())
   }
 
+  getCampaign() {
+    const id = +this.route.snapshot.paramMap.get('campaignId');
+    const obj: any = this.campaignsService.getSingleCampaign().subscribe(campaignArray => {
+      campaignArray.find(response => response === id);
+    });
+    return obj;
+  }
 }
