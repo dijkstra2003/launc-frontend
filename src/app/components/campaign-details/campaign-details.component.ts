@@ -24,7 +24,7 @@ export class CampaignDetailsComponent implements OnInit {
 
   getCampaign() {
     const id = +this.route.snapshot.paramMap.get('campaignId');
-    const obj: any = this.campaignsService.getSingleCampaign().subscribe(campaignArray => {
+    const obj = this.campaignsService.getSingleCampaign().subscribe(campaignArray => {
       campaignArray.find(response => response === id);
     });
     return obj;
