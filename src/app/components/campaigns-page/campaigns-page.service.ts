@@ -1,4 +1,5 @@
-import { Observable } from 'rxjs';
+import { CampaignModel } from 'src/app/models/campaign-model';
+import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -11,9 +12,15 @@ export class CampaignsPageService {
 
   constructor(private http: HttpClient) { }
 
-  getCampaigns(): Observable<any[]> {
-    return this.http.get<any[]>(this.campaignsDbUrl);
+  
+
+  getCampaigns(): Observable<CampaignModel[]> {
+    return this.http.get<CampaignModel[]>(this.campaignsDbUrl);
   }
 
-  
+  getCampaign(id: number): Observable<CampaignModel>{
+    
+    return this.http.get<CampaignModel>(this.campaignsDbUrl);
+    
+  }
 }
