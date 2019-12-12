@@ -17,11 +17,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
-  }
-
-  change() {
-    console.log('bah');
   }
 
   ngAfterViewInit(): void {

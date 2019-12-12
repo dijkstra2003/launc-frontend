@@ -12,14 +12,13 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
 
-  //  on success set localstorage
-  authenticateUser(username: string, password: string) {
+  authenticateUser(email: string, password: string) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         })
       };
-    return this.http.post('http://localhost:20450/users/authenticate', {username, password}, httpOptions);
+    return this.http.post('http://localhost:5000/users/authenticate', {email, password}, httpOptions);
   }
 
   updateState(isLoggedIn: boolean) {
