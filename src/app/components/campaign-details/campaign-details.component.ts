@@ -25,13 +25,16 @@ export class CampaignDetailsComponent implements OnInit {
 
   getCampaign() {
     const id = +this.route.snapshot.paramMap.get('campaignId');
-    var campaignObject: any;
+    let campaignObject: any;
+
     campaignObject = this.campaignsService.getSingleCampaign().subscribe((campaignResponse) => {
-      var campaignArray = [];
+      let campaignArray = [];
       campaignArray.push(campaignResponse);
+      //find and return campaign object when id matches
       return campaignArray[0].find((response) => response.id === id);
     });
     console.log(campaignObject);
+    //return a campaign object
     return campaignObject;
   }
 }
