@@ -21,6 +21,16 @@ export class AuthenticationService {
     return this.http.post('http://localhost:5000/users/authenticate', {email, password}, httpOptions);
   }
 
+  registerUser(name: string, email: string, password: string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+    };
+
+    return this.http.post('http://localhost:5000/users', {name, email, password}, httpOptions);
+  }
+
   updateState(isLoggedIn: boolean) {
     this.isLoggedInSource.next(isLoggedIn);
   }

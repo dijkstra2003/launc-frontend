@@ -33,17 +33,17 @@
         <h2>Time to feel like home</h2>
         <label>
           <span>Name</span>
-          <input type="text" #name/>
+          <input type="text" #registerName/>
         </label>
         <label>
           <span>Email</span>
-          <input/>
+          <input #registerEmail/>
         </label>
         <label>
           <span>Password</span>
-          <input type="password" />
+          <input type="password" #registerPassword/>
         </label>
-        <button type="button" class="submit">register</button>
+        <button type="button" class="submit" (click)="register(registerName.value, registerEmail.value, registerPassword.value)">register</button>
         <button type="button" class="submit trigger js-target">back to login</button>
       </div>
     </div>

@@ -37,6 +37,14 @@ export class LoginComponent implements OnInit, AfterViewInit {
     });
   }
 
+  register(name, email, password) {
+    this.authenticationService.registerUser(name, email, password).subscribe(() => {
+      this.login(email, password);
+    }, error => {
+      console.log(error);
+    });
+  }
+
   ngOnInit() {
     document.querySelectorAll('.js-target').forEach((button) => {
       button.addEventListener('click', () => {
