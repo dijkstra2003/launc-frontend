@@ -20,13 +20,16 @@ export class CampaignDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getCampaign();
+    console.log(this.campaign);
   }
 
   getCampaign() {
     const id = +this.route.snapshot.paramMap.get('campaignId');
-    const obj = this.campaignsService.getSingleCampaign().subscribe(campaignArray => {
-      campaignArray.find(response => response === id);
+    this.campaignsService.getSingleCampaign().subscribe(campaignResponse => {
+      const campaignArray = [];
+      campaignArray.push(campaignResponse);
+      console.log(campaignArray[0]);
+      this.campaign = campaignArray[0].filter(response => response === id);
     });
-    return obj;
   }
 }
