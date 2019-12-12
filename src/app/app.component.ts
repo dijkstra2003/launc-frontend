@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
 
@@ -8,16 +8,16 @@ import { AuthenticationService } from 'src/app/authentication/authentication.ser
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'launc-frontend';
   route = environment.apiHostname;
 
   constructor(
     private authenticationService: AuthenticationService,
-  ){}
-  
+  ) {}
+
   ngOnInit(): void {
-    if(localStorage.getItem("JwtToken") !== null) {
+    if (localStorage.getItem('JwtToken') !== null) {
       this.authenticationService.updateState(true);
     } else {
       this.authenticationService.updateState(false);
