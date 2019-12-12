@@ -2,6 +2,7 @@ import { CampaignsPageService } from './../campaigns-page/campaigns-page.service
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { stringify } from 'querystring';
 
 
 @Component({
@@ -20,16 +21,17 @@ export class CampaignDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getCampaign();
-    console.log(this.campaign);
   }
 
   getCampaign() {
     const id = +this.route.snapshot.paramMap.get('campaignId');
-    this.campaignsService.getSingleCampaign().subscribe(campaignResponse => {
-      const campaignArray = [];
+    var campaignObject: any;
+    campaignObject = this.campaignsService.getSingleCampaign().subscribe((campaignResponse) => {
+      var campaignArray = [];
       campaignArray.push(campaignResponse);
-      console.log(campaignArray[0]);
-      this.campaign = campaignArray[0].filter(response => response === id);
+      return campaignArray[0].find((response) => response.id === id);
     });
+    console.log(campaignObject);
+    return campaignObject;
   }
 }
