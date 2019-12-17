@@ -1,7 +1,12 @@
-<div class="row">
-  <div class="col-12  col-md-6 col-lg-4 mt-3">
-    <app-campaign-card class="CpCard" 
-      campaign = {{campaign}}
-    ></app-campaign-card>
-  </div>
+<div class="container d-flex h-100 justify-content-center align-items-center">
+  <div class="row">
+    <div class="col-sm-8">
+      <img src='https://www.auto-haefland.nl/wp-content/uploads/2015/04/placeholder-1200x500.png' style="width: 100%"/>
+    </div>
+    <div class="col-sm-4" *ngIf="dataLoaded">
+      <p>{{ selectedCampaign.campaignName }}</p>
+      <p>{{ selectedCampaign.campaignDescription }}</p>
+      <button class="btn btn-secondary">Support this Campaign</button>
+    </div>
+  </div>  
 </div>
