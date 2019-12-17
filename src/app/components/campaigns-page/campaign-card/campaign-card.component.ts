@@ -10,14 +10,13 @@ import { CampaignsPageComponent } from '../campaigns-page.component';
 })
 export class CampaignCardComponent implements OnInit {
 
-  @Input() selectedCampaign;
+  @Input() selectedCampaign = {} as Campaign;
 
-  constructor(private router: Router, campaign: CampaignsPageComponent) {
-    this.selectedCampaign = campaign.campaignsList;
+  constructor(private router: Router) {
   }
 
   navigateToCampaign() {
-    this.router.navigate(['campaign', 1]);
+    this.router.navigate(['campaign', this.selectedCampaign.id]);
   }
 
   ngOnInit() {

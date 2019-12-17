@@ -40,8 +40,7 @@ import { CampaignDetailsComponent } from './components/campaigns-page/campaign-d
   ],
   providers: [
     HttpClientModule,
-    CampaignPageService,
-    CampaignsPageComponent,
+    CampaignPageService
   ],
   bootstrap: [AppComponent]
 })
