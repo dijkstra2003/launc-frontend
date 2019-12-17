@@ -9,7 +9,7 @@ import { Campaign } from 'src/app/models/Campaign';
 })
 export class CampaignCardComponent implements OnInit {
 
-  @Input() campaign: Campaign;
+  @Input() selectedCampaign: Campaign;
 
   constructor(private router: Router) {
   }
