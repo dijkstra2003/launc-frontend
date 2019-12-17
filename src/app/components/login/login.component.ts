@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
+import { Router } from '@angular/router';
 
 export interface User {
-  token?: string;
-  firstName: string;
-  lastName: string;
-  username: string;
+  name: string;
+  jwtToken: string;
 }
 
 @Component({
@@ -18,20 +17,31 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private router: Router,
+    ) {}
 
   @ViewChild('email', {static: false}) email: ElementRef;
 
-  login(username, password) {
-    this.authenticationService.authenticateUser(username, password).subscribe(success => {
+  login(email, password) {
+    this.authenticationService.authenticateUser(email, password).subscribe(success => {
       const response: User = success as User;
-      localStorage.setItem('token', response.token);
-      localStorage.setItem('username', response.username);
-      console.log(success);
-      this.authenticationService.updateState(true);
-      //  TODO - redirect
-    }, error => {
 
+      localStorage.setItem('JwtToken', response.jwtToken);
+      localStorage.setItem('name', response.name);
+
+      this.authenticationService.updateState(true);
+      this.router.navigate(['/']);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  register(name, email, password) {
+    this.authenticationService.registerUser(name, email, password).subscribe(() => {
+      this.login(email, password);
+    }, error => {
+      console.log(error);
     });
   }
 

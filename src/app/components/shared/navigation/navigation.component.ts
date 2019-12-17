@@ -22,14 +22,14 @@ export class NavigationComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService) {
     this.isLoggedIn = this.authenticationService.isLoggedInState;
-    this.userName = localStorage.getItem('username');
+    this.userName = localStorage.getItem('name');
   }
 
   //  not for future use just to start.
   logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
-    window.location.reload();
+    localStorage.removeItem('name');
+    localStorage.removeItem('JwtToken');
+
     this.authenticationService.updateState(false);
   }
 
