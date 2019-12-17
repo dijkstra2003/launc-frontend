@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Campaign } from 'src/app/models/Campaign';
 
@@ -21,6 +21,8 @@ export class CampaignPageService {
   }
 
   createCampaign(campaign: Campaign) {
-    return this.http.post<Campaign>(this.campaignsDbUrl, campaign);
+    const httpOptions = new HttpHeaders();
+    httpOptions.append('Authorization', 'Bearer ' + localStorage.getItem('jwtToken'));
+    return this.http.post<Campaign>(this.campaignsDbUrl, campaign, { headers : httpOptions });
   }
 }
