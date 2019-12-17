@@ -1,0 +1,38 @@
+<div class="container d-flex h-100 justify-content-center align-items-center" [formGroup]="campaignForm">
+  <!-- Name, Description, Image-->
+  <div class="container">
+    <h4 class="display-4">Create campaign</h4>
+    <div class="row">
+      <div class="col details">
+        <label for="name">Campaign Name</label>
+        <input type="text" formControlName="campaignName" class="form-control" placeholder="Campaign Name">
+
+        <label for="description">Campaign Goal</label>
+        <input class="form-control" formControlName="minAmount" type="number" placeholder="Goal Amount">
+        
+        <label for="description">Campaign Description</label>
+        <textarea class="form-control" formControlName="campaignDescription" rows="4" placeholder="Description"></textarea>
+      </div>
+      <div class="col">
+        <mat-form-field class="start">
+          <input matInput [matDatepicker]="startPicker" formControlName="goalStart" placeholder="Start Date">
+          <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+          <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="endPicker" formControlName="goalEnd" placeholder="End Date">
+          <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+          <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+
+        <label for="campaignPhoto">Upload photo</label>
+        <input type="file" class="form-control-file" id="campaignUpload">
+      </div>
+    </div>
+    <div class="container btn-container">
+      <button class="btn btn-secondary" (click)="createCampaign()">Create</button>
+      <button class="btn btn-danger">Cancel</button>
+    </div>
+  </div>
+</div>

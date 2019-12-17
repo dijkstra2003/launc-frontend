@@ -20,4 +20,7 @@ export class CampaignPageService {
     return this.http.get<Campaign>(this.campaignsDbUrl + id);
   }
 
+  createCampaign(campaign: Campaign) {
+    return this.http.post<Campaign>(this.campaignsDbUrl, campaign);
+  }
 }
