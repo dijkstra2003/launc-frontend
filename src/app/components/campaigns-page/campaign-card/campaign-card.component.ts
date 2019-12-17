@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-campaign-card',
@@ -12,8 +13,11 @@ export class CampaignCardComponent implements OnInit {
   @Input() campaignImage: string;
   @Input() campaignUrl: string;
 
-  constructor() {
+  constructor(private router: Router) {
+  }
 
+  navigateToCampaign() {
+    this.router.navigate(['campaign', 1]);
   }
 
   ngOnInit() {

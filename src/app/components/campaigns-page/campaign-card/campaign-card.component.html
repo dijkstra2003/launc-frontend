@@ -3,6 +3,6 @@
     <div class="card-body d-flex flex-column">
       <h5 class="card-title">{{campaignName}}</h5>
       <p class="card-text">{{campaignDescription}}</p>
-      <p [routerLink]="campaignUrl" class="btn mt-auto campaign-button">Go somewhere</p>
+      <p (click)="navigateToCampaign()" class="btn mt-auto campaign-button">Go somewhere</p>
     </div>
 </div>
