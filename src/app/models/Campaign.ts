@@ -1,6 +1,6 @@
 import { Goal } from './Goal';
 
-export interface Campaign {
+export class Campaign {
   id: number;
   campaignName: string;
   campaignDescription: string;

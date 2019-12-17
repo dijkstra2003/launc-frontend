@@ -9,8 +9,8 @@ describe('CampaignCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule ],
-      declarations: [ CampaignCardComponent, CampaignsPageComponent ]
+      imports: [ RouterTestingModule],
+      declarations: [CampaignCardComponent, CampaignsPageComponent]
     })
     .compileComponents();
   }));

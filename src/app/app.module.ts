@@ -36,11 +36,12 @@ import { CampaignDetailsComponent } from './components/campaigns-page/campaign-d
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [
     HttpClientModule,
-    CampaignPageService
+    CampaignPageService,
+    CampaignsPageComponent,
   ],
   bootstrap: [AppComponent]
 })

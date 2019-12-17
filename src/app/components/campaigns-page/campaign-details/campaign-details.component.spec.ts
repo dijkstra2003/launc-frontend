@@ -2,6 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CampaignDetailsComponent } from './campaign-details.component';
 import { CampaignCardComponent } from '../campaign-card/campaign-card.component';
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CampaignDetailsComponent', () => {
   let component: CampaignDetailsComponent;
@@ -9,7 +12,14 @@ describe('CampaignDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CampaignDetailsComponent, CampaignCardComponent]
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ],
+      declarations: [
+        CampaignDetailsComponent,
+        CampaignCardComponent,
+      ]
     })
     .compileComponents();
   }));
