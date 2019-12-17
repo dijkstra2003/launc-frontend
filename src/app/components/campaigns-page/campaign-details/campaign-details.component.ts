@@ -11,13 +11,19 @@ import { Observable } from 'rxjs';
 })
 export class CampaignDetailsComponent implements OnInit {
 
-  selectedCampaign: Observable<Campaign>;
+  selectedCampaign: Campaign;
+  dataLoaded = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private campaignService: CampaignPageService) { }
+  constructor(private activatedRoute: ActivatedRoute, private campaignService: CampaignPageService) {
+    this.getSelectedCampaign();
+  }
 
   getSelectedCampaign() {
     const campaignIdFromUrl = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.selectedCampaign = this.campaignService.getCampaignById(campaignIdFromUrl);
+    this.campaignService.getCampaignById(campaignIdFromUrl).subscribe(result => {
+      this.selectedCampaign = result;
+      this.dataLoaded = true;
+    });
   }
 
   ngOnInit() {

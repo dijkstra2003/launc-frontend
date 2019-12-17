@@ -8,7 +8,7 @@ import { Campaign } from 'src/app/models/Campaign';
 })
 export class CampaignPageService {
 
-  readonly campaignsDbUrl = 'http://dev.api.launc.space/campaign';
+  readonly campaignsDbUrl = 'http://dev.api.launc.space/campaign/';
 
   constructor(private http: HttpClient) { }
 
@@ -17,8 +17,7 @@ export class CampaignPageService {
   }
 
   getCampaignById(id: number): Observable<Campaign> {
-    const params = new HttpParams().set('campaignId', id.toString());
-    return this.http.get<Campaign>(this.campaignsDbUrl, { params });
+    return this.http.get<Campaign>(this.campaignsDbUrl + id);
   }
 
 }
