@@ -19,7 +19,7 @@ export class AuthenticationService {
         'Content-Type':  'application/json',
         })
       };
-    return this.http.post(routes.apiHostname + 'users/authenticate', {email, password}, httpOptions);
+    return this.http.post(routes.apiHostname + '/users/authenticate', {email, password}, httpOptions);
   }
 
   registerUser(name: string, email: string, password: string) {
@@ -29,7 +29,7 @@ export class AuthenticationService {
       })
     };
 
-    return this.http.post(routes.apiHostname + 'users', {name, email, password}, httpOptions);
+    return this.http.post(routes.apiHostname + '/users', {name, email, password}, httpOptions);
   }
 
   updateState(isLoggedIn: boolean) {
