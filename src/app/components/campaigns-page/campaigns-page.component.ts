@@ -1,5 +1,7 @@
 import { CampaignPageService } from './campaign-page.service';
 import { Component, OnInit } from '@angular/core';
+import { Campaign } from 'src/app/models/Campaign';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-campaigns-page',
@@ -8,13 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CampaignsPageComponent implements OnInit {
 
-  campaigns;
+  campaignsList: Observable<Campaign[]>;
 
   constructor(private campaignService: CampaignPageService) {}
 
   ngOnInit() {
-    this.campaignService.getCampaigns().subscribe(response => {
-      this.campaigns = response;
-    });
+    this.campaignsList = this.campaignService.getCampaigns();
   }
 }
