@@ -2,6 +2,7 @@ import { Goal } from './Goal';
 
 export interface Campaign {
   id: number;
+  campaignName: string;
   campaignDescription: string;
   campaignGoal: Goal[];
   teamCampaign: any[];

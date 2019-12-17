@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Campaign } from 'src/app/models/Campaign';
 
 @Component({
   selector: 'app-campaign-card',
@@ -8,10 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CampaignCardComponent implements OnInit {
 
-  @Input() campaignName: string;
-  @Input() campaignDescription: string;
-  @Input() campaignImage: string;
-  @Input() campaignUrl: string;
+  @Input() campaign: Campaign;
 
   constructor(private router: Router) {
   }
