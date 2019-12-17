@@ -16,6 +16,7 @@ describe('CampaignsPageComponent', () => {
       ],
       declarations: [
         CampaignsPageComponent,
+        CampaignCardComponent
       ]
     })
     .compileComponents();
