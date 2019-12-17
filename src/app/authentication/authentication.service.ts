@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { routes } from 'src/environments/api-route.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +13,23 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
 
-  //  on success set localstorage
-  authenticateUser(username: string, password: string) {
+  authenticateUser(email: string, password: string) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         })
       };
-    return this.http.post('http://localhost:20450/users/authenticate', {username, password}, httpOptions);
+    return this.http.post(routes.apiHostname + 'users/authenticate', {email, password}, httpOptions);
+  }
+
+  registerUser(name: string, email: string, password: string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+    };
+
+    return this.http.post(routes.apiHostname + 'users', {name, email, password}, httpOptions);
   }
 
   updateState(isLoggedIn: boolean) {

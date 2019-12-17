@@ -4,14 +4,14 @@
       <h2>Welcome back</h2>
       <label>
         <span>Email</span>
-        <input #username type="text" #email/>
+        <input #email type="text" #email/>
       </label>
       <label>
         <span>Password</span>
         <input #password type="password" />
       </label>
       <p class="forgot-pass">Forgot password?</p>
-      <button type="button" class="submit" (click)="login(username.value, password.value)">Sign In</button>
+      <button type="button" class="submit" (click)="login(email.value, password.value)">Sign In</button>
       <button type="button" class="submit trigger js-target">REGISTER</button>
     </div>
     <div class="signup">
@@ -33,17 +33,17 @@
         <h2>Time to feel like home</h2>
         <label>
           <span>Name</span>
-          <input type="text" #name/>
+          <input type="text" #registerName/>
         </label>
         <label>
           <span>Email</span>
-          <input/>
+          <input #registerEmail/>
         </label>
         <label>
           <span>Password</span>
-          <input type="password" />
+          <input type="password" #registerPassword/>
         </label>
-        <button type="button" class="submit">register</button>
+        <button type="button" class="submit" (click)="register(registerName.value, registerEmail.value, registerPassword.value)">register</button>
         <button type="button" class="submit trigger js-target">back to login</button>
       </div>
     </div>
