@@ -15,6 +15,7 @@ import { FilterPipe } from '../shared/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { CampaignCardComponent } from './components/campaigns-page/campaign-card/campaign-card.component';
 import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
+import { CampaignDetailsComponent } from './components/campaigns-page/campaign-details/campaign-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CampaignsPageComponent } from './components/campaigns-page/campaigns-pa
     FooterComponent,
     FilterPipe,
     CampaignsPageComponent,
-    CampaignCardComponent
+    CampaignCardComponent,
+    CampaignDetailsComponent
   ],
   imports: [
     BrowserModule,
