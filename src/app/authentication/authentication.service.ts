@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { routes } from 'src/environments/api-route.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class AuthenticationService {
         'Content-Type':  'application/json',
         })
       };
-    return this.http.post('http://localhost:5000/users/authenticate', {email, password}, httpOptions);
+    return this.http.post(routes.apiHostname + 'users/authenticate', {email, password}, httpOptions);
   }
 
   registerUser(name: string, email: string, password: string) {
@@ -28,7 +29,7 @@ export class AuthenticationService {
       })
     };
 
-    return this.http.post('http://localhost:5000/users', {name, email, password}, httpOptions);
+    return this.http.post(routes.apiHostname + 'users', {name, email, password}, httpOptions);
   }
 
   updateState(isLoggedIn: boolean) {
