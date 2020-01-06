@@ -2,13 +2,14 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Campaign } from 'src/app/models/Campaign';
+import { routes } from 'src/environments/api-route.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CampaignPageService {
 
-  readonly campaignsDbUrl = 'http://dev.api.launc.space/campaign/';
+  readonly campaignsDbUrl = routes.apiHostname + '/campaign/';
 
   constructor(private http: HttpClient) { }
 
