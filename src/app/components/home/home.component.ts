@@ -1,4 +1,7 @@
 import { Component, OnInit, Pipe } from '@angular/core';
+import { Campaign } from 'src/app/models/Campaign';
+import { Observable } from 'rxjs';
+import { CampaignPageService } from '../campaigns-page/campaign-page.service';
 
 @Component({
   selector: 'app-home',
@@ -8,52 +11,11 @@ import { Component, OnInit, Pipe } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
-  projects = [
-    {
-      title: 'first project',
-      description: 'a random description for a project',
-      logoSrc: '/assets/logo-los.png'
-    },
-    {
-      title: 'second project',
-      description: 'a random description for a project',
-      logoSrc: '/assets/logo-los.png'
-    },
-    {
-      title: 'third project',
-      description: 'a random description for a project',
-      logoSrc: '/assets/logo-los.png'
-    },
-    {
-      title: 'fourth project',
-      description: 'a random description for a project',
-      logoSrc: '/assets/logo-los.png'
-    },
-    {
-      title: 'first project',
-      description: 'a random description for a project',
-      logoSrc: '/assets/logo-los.png'
-    },
-    {
-      title: 'second project',
-      description: 'a random description for a project',
-      logoSrc: '/assets/logo-los.png'
-    },
-    {
-      title: 'third project',
-      description: 'a random description for a project',
-      logoSrc: '/assets/logo-los.png'
-    },
-    {
-      title: 'fourth project',
-      description: 'a random description for a project',
-      logoSrc: '/assets/logo-los.png'
-    }
-  ];
+  campaigns: Observable<Campaign[]>;
 
-  constructor() { }
+  constructor(private campaignService: CampaignPageService) {}
 
   ngOnInit() {
+    this.campaigns = this.campaignService.getCampaigns();
   }
-
 }

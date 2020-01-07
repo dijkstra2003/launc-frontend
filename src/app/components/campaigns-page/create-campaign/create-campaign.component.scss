@@ -1,0 +1,24 @@
+h4{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+textarea {
+  resize: none;
+}
+mat-form-field.start{
+  margin-right: 100px;
+  margin-top: 25px;
+}
+div.details{
+  label{
+    margin-top: 20px;
+  }
+}
+div.btn-container{
+  text-align: center;
+  margin-top: 50px;
+  button:first-child{
+    margin-right: 20px;
+  }
+}
