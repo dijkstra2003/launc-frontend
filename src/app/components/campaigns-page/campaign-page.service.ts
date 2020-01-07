@@ -9,7 +9,7 @@ import { routes } from 'src/environments/api-route.prod';
 })
 export class CampaignPageService {
 
-  readonly campaignsDbUrl = routes.apiHostname + '/campaign/';
+  readonly campaignsDbUrl = routes.apiHostname + 'campaign/';
 
   constructor(private http: HttpClient) { }
 
@@ -23,10 +23,9 @@ export class CampaignPageService {
 
   createCampaign(campaign: Campaign) {
     const httpOptions = new HttpHeaders();
-    const token = localStorage.getItem('token');
-    httpOptions.set('Content-Type', 'application/json');
-    httpOptions.set('Authorization', 'Bearer ' + token);
-    console.log(httpOptions);
+    const token = localStorage.getItem('JwtToken');
+    httpOptions.append('Content-Type', 'application/json');
+    httpOptions.append('Authorization', 'Bearer '.concat(token));
     return this.http.post<Campaign>(this.campaignsDbUrl, campaign, { headers : httpOptions });
   }
 }

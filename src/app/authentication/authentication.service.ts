@@ -17,9 +17,13 @@ export class AuthenticationService {
   authenticateUser(email: string, password: string) {
     const httpOptions = new HttpHeaders();
     httpOptions.append('Content-Type',  'application/json');
-    httpOptions.append('Authorization', 'Bearer ' + localStorage.getItem('jwtToken'));
-    console.log(localStorage.getItem('jwtToken'));
-    return this.http.post('http://dev.api.launc.space/users/authenticate', {email, password}, { headers: httpOptions });
+    return this.http.post(routes.apiHostname + 'users/authenticate',
+      {email, password},
+      { headers: httpOptions, responseType: 'text' });
+  }
+
+  isAuthenticated() {
+    return this.isLoggedIn;
   }
 
   registerUser(name: string, email: string, password: string) {
@@ -28,7 +32,7 @@ export class AuthenticationService {
         'Content-Type':  'application/json',
       })
     };
-    return this.http.post(routes.apiHostname + '/users', {name, email, password}, httpOptions);
+    return this.http.post(routes.apiHostname + 'users', {name, email, password}, httpOptions);
   }
 
   updateState(isLoggedIn: boolean) {

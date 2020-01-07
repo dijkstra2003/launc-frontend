@@ -17,13 +17,13 @@ export class CreateCampaignComponent implements OnInit {
 
   createCampaign() {
     const newCampaign = {
-      campaignName: this.campaignForm.get('campaignName').value,
-      campaignDescription: this.campaignForm.get('campaignDescription').value,
-      campaignGoal: [{
-        goalStart: this.campaignForm.get('goalStart').value,
-        goalEnd: this.campaignForm.get('goalEnd').value,
-        minAmount: this.campaignForm.get('minAmount').value
-      }]
+      CampaignName: this.campaignForm.get('campaignName').value,
+      CampaignDescription: this.campaignForm.get('campaignDescription').value,
+      Goal: {
+        GoalStart: this.campaignForm.get('goalStart').value,
+        GoalEnd: this.campaignForm.get('goalEnd').value,
+        MinAmount: this.campaignForm.get('minAmount').value
+      }
     } as Campaign;
     this.campaignService.createCampaign(newCampaign).subscribe(
       result => console.log(result),
