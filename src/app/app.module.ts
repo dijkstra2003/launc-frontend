@@ -19,6 +19,7 @@ import { CampaignDetailsComponent } from './components/campaigns-page/campaign-d
 import { CreateCampaignComponent } from './components/campaigns-page/create-campaign/create-campaign.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MaterialModule } from './modules/material.module';
     CampaignsPageComponent,
     CampaignCardComponent,
     CampaignDetailsComponent,
-    CreateCampaignComponent
+    CreateCampaignComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +44,7 @@ import { MaterialModule } from './modules/material.module';
     FontAwesomeModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
-
+    MaterialModule,
   ],
   providers: [
     HttpClientModule,

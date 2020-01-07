@@ -6,7 +6,8 @@
     <div class="col-sm-4" *ngIf="dataLoaded">
       <p>{{ selectedCampaign.campaignName }}</p>
       <p>{{ selectedCampaign.campaignDescription }}</p>
-      <button class="btn btn-secondary">Support this Campaign</button>
+      <button class="btn btn-secondary" data-toggle="collapse" data-target="#paymentMethods">Support this Campaign</button>
+      <app-payment></app-payment>
     </div>
   </div>  
 </div>
