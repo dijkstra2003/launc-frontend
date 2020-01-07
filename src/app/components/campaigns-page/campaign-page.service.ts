@@ -20,5 +20,4 @@ export class CampaignPageService {
   getCampaignById(id: number): Observable<Campaign> {
     return this.http.get<Campaign>(this.campaignsDbUrl + id);
   }
-
 }
