@@ -16,7 +16,7 @@ export class CampaignCardComponent implements OnInit {
   }
 
   navigateToCampaign() {
-    this.router.navigate(['campaign', this.selectedCampaign.id]);
+    this.router.navigate(['campaign/by/', 1]);
   }
 
   ngOnInit() {

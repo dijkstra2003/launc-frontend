@@ -16,6 +16,9 @@ import { FormsModule } from '@angular/forms';
 import { CampaignCardComponent } from './components/campaigns-page/campaign-card/campaign-card.component';
 import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
 import { CampaignDetailsComponent } from './components/campaigns-page/campaign-details/campaign-details.component';
+import { CreateCampaignComponent } from './components/campaigns-page/create-campaign/create-campaign.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './modules/material.module';
 
 @NgModule({
   declarations: [
@@ -29,14 +32,18 @@ import { CampaignDetailsComponent } from './components/campaigns-page/campaign-d
     FilterPipe,
     CampaignsPageComponent,
     CampaignCardComponent,
-    CampaignDetailsComponent
+    CampaignDetailsComponent,
+    CreateCampaignComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
+
   ],
   providers: [
     HttpClientModule,
