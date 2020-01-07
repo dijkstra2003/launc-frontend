@@ -26,7 +26,7 @@ export class CampaignDetailsComponent implements OnInit {
       this.dataLoaded = true;
     });
 
-    sessionStorage.setItem("selectedCampaign", campaignIdFromUrl.toString());
+    sessionStorage.setItem('selectedCampaign', campaignIdFromUrl.toString());
   }
 
   ngOnInit() {

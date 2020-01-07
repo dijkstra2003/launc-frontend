@@ -13,10 +13,10 @@ export class PaymentService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('JwtToken')
+        Authorization: 'Bearer ' + localStorage.getItem('JwtToken')
       })
     };
 
-    return this.http.post(routes.apiHostname + "/payment/" + paymentMethod, {GoalId, Amount}, httpOptions);
+    return this.http.post(routes.apiHostname + '/payment/' + paymentMethod, {GoalId, Amount}, httpOptions);
   }
 }
