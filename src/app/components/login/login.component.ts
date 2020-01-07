@@ -24,10 +24,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   login(username, password) {
     this.authenticationService.authenticateUser(username, password).subscribe(success => {
-      const response: User = success as User;
-      localStorage.setItem('token', response.token);
-      localStorage.setItem('username', response.username);
-      console.log(success);
+      localStorage.setItem('token', success.jwtToken);
+      localStorage.setItem('username', success.name);
       this.authenticationService.updateState(true);
       //  TODO - redirect
     }, error => {

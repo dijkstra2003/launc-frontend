@@ -22,7 +22,10 @@ export class CampaignPageService {
 
   createCampaign(campaign: Campaign) {
     const httpOptions = new HttpHeaders();
-    httpOptions.append('Authorization', 'Bearer ' + localStorage.getItem('jwtToken'));
+    const token = localStorage.getItem('token');
+    httpOptions.set('Content-Type', 'application/json');
+    httpOptions.set('Authorization', 'Bearer ' + token);
+    console.log(httpOptions);
     return this.http.post<Campaign>(this.campaignsDbUrl, campaign, { headers : httpOptions });
   }
 }
