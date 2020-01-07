@@ -9,10 +9,10 @@ export class AuthorizeInterceptorService implements HttpInterceptor {
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    if (sessionStorage.getItem('token')) {
+    if (localStorage.getItem('token')) {
       req = req.clone({
         setHeaders: {
-          Authorization: sessionStorage.getItem('token')
+          Authorization: 'Bearer ' + localStorage.getItem('token')
         }
       });
     }
