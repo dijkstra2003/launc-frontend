@@ -8,8 +8,8 @@ describe('CampaignCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule ],
-      declarations: [ CampaignCardComponent ]
+      imports: [ RouterTestingModule],
+      declarations: [CampaignCardComponent]
     })
     .compileComponents();
   }));

@@ -43,6 +43,7 @@ import { MaterialModule } from './modules/material.module';
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule
+
   ],
   providers: [
     HttpClientModule,

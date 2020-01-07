@@ -23,8 +23,9 @@
             <a class="nav-link" [routerLink]="['/campaign/create']">Create Campaign</a>
             <a class="nav-link" *ngIf="(isLoggedIn | async) === false; else loggedIn;" [routerLink]="['/login']">sign in</a>
             <ng-template #loggedIn>
-                <a class="nav-link" href="#">logged in as {{userName}}</a>
-                <p class="nav-link" (click)="logout()">logout</p>
+                <a class="nav-link" [routerLink]="['/']">{{userName}}</a>
+                <a class="nav-link" [routerLink]="['/']">|</a>
+                <a class="nav-link" [routerLink]="['/']" (click)="logout()">logout</a>
             </ng-template>
         </ul>
     </div>
