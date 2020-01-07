@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CampaignPageService } from '../campaign-page.service';
 import { Campaign } from 'src/app/models/Campaign';
+import { AuthenticationService } from 'src/app/authentication/authentication.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,13 +10,21 @@ import { Observable } from 'rxjs';
   templateUrl: './campaign-details.component.html',
   styleUrls: ['./campaign-details.component.scss']
 })
+
 export class CampaignDetailsComponent implements OnInit {
 
   selectedCampaign: Campaign;
   dataLoaded = false;
+  isLoggedIn: Observable<boolean>;
 
-  constructor(private activatedRoute: ActivatedRoute, private campaignService: CampaignPageService) {
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private campaignService: CampaignPageService,
+    private authenticationService: AuthenticationService
+    ) {
     this.getSelectedCampaign();
+    this.isLoggedIn = this.authenticationService.isLoggedInState;
   }
 
   getSelectedCampaign() {
@@ -24,9 +33,10 @@ export class CampaignDetailsComponent implements OnInit {
       this.selectedCampaign = result;
       this.dataLoaded = true;
     });
+
+    sessionStorage.setItem('selectedCampaign', campaignIdFromUrl.toString());
   }
 
   ngOnInit() {
   }
-
 }

@@ -20,6 +20,7 @@ import { CreateCampaignComponent } from './components/campaigns-page/create-camp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import { AuthorizeInterceptorService } from './authentication/auth-interceptor.service';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AuthorizeInterceptorService } from './authentication/auth-interceptor.s
     CampaignsPageComponent,
     CampaignCardComponent,
     CampaignDetailsComponent,
-    CreateCampaignComponent
+    CreateCampaignComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +45,7 @@ import { AuthorizeInterceptorService } from './authentication/auth-interceptor.s
     FontAwesomeModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
-
+    MaterialModule,
   ],
   providers: [
     {
