@@ -22,7 +22,7 @@ script:
     -Dsonar.projectKey=launc-frontend
     -Dsonar.sources=.
     -Dsonar.host.url=http://dev.launc.space:9000
-    -Dsonar.login=7a9df4951c7c759d98736e0d7c26df470ffb9b6e
+    -Dsonar.login=2b22b0cfc71472bc2fba758210d22a8eed9910f7
 
 addons:
   ssh_known_hosts:

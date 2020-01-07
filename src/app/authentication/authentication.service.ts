@@ -20,6 +20,7 @@ export class AuthenticationService {
     httpOptions.append('Authorization', 'Bearer ' + localStorage.getItem('jwtToken'));
     console.log(localStorage.getItem('jwtToken'));
     return this.http.post('http://dev.api.launc.space/users/authenticate', {email, password}, { headers: httpOptions });
+  }
 
   registerUser(name: string, email: string, password: string) {
     const httpOptions = {
