@@ -9,10 +9,10 @@ export class AuthorizeInterceptorService implements HttpInterceptor {
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('JwtToken')) {
       req = req.clone({
         setHeaders: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
+          Authorization: 'Bearer '.concat(localStorage.getItem('JwtToken'))
         }
       });
     }

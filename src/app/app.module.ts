@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { ProjectCardSmallComponent } from './components/project/project-card-small/project-card-small.component';
@@ -19,6 +19,7 @@ import { CampaignDetailsComponent } from './components/campaigns-page/campaign-d
 import { CreateCampaignComponent } from './components/campaigns-page/create-campaign/create-campaign.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
+import { AuthorizeInterceptorService } from './authentication/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,11 @@ import { MaterialModule } from './modules/material.module';
 
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthorizeInterceptorService,
+      multi: true
+    },
     HttpClientModule,
     CampaignPageService
   ],
