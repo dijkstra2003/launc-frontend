@@ -12,7 +12,7 @@ import { PaymentStatusComponent } from './components/payment-status/payment-stat
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'projects', component: CampaignsPageComponent},
-  { path: 'projects/search/:searchWord', component:CampaignsPageComponent},
+  { path: 'projects/search/:searchWord', component: CampaignsPageComponent},
   { path: 'campaign/by/:id', component: CampaignDetailsComponent},
   { path: 'campaign/create', component: CreateCampaignComponent, canActivate: [AuthGuard]},
   { path: 'payment', component: PaymentStatusComponent, canActivate: [AuthGuard]},

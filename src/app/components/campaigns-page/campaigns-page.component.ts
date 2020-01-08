@@ -13,27 +13,25 @@ import { ActivatedRoute } from '@angular/router';
 export class CampaignsPageComponent implements OnInit {
 
   searchWord;
-  campaignsList: BehaviorSubject<Campaign[]>;
-  campaignsList_1: Observable<Campaign[]>;
+  campaignsList: Observable<Campaign[]>;
 
 
   constructor(
     private campaignService: CampaignPageService,
     private activatedRoute: ActivatedRoute,
     ) {
-      this.campaignsList = new BehaviorSubject([]);
     }
 
   ngOnInit() {
     this.searchWord = this.activatedRoute.snapshot.paramMap.get('searchWord');
 
-    if(!this.searchWord) {
-      this.campaignsList_1 = this.campaignService.getCampaigns();
+    if (!this.searchWord) {
+      this.campaignsList = this.campaignService.getCampaigns();
     } else {
-      this.campaignsList_1 = this.campaignService.getCampaigns().pipe(map(campaigns => { 
+      this.campaignsList = this.campaignService.getCampaigns().pipe(map(campaigns => {
         return campaigns = campaigns.filter(
           e => e.campaignName.toLowerCase().includes(this.searchWord.toLowerCase())
-        )})
+        ); })
       );
     }
   }

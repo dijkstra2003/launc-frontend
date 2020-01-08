@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './header.component';
 import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -11,7 +12,8 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         FontAwesomeModule,
-        FormsModule
+        FormsModule,
+        RouterTestingModule
       ],
       declarations: [
         HeaderComponent,

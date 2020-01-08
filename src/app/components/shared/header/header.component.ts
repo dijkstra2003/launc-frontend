@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit, AfterViewInit {
 
   faSearch = faSearch;
-  
+
   @ViewChild('autofocus', {static: false}) autofocus: ElementRef;
 
   constructor(private router: Router) {
