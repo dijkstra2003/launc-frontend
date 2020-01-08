@@ -22,14 +22,16 @@ export class CreateCampaignComponent implements OnInit {
     const newCampaign = {
       CampaignName: this.campaignForm.get('campaignName').value,
       CampaignDescription: this.campaignForm.get('campaignDescription').value,
+      CampaignUrl: this.campaignForm.get('campaignUrl').value,
       Goal: {
         GoalStart: this.campaignForm.get('goalStart').value,
         GoalEnd: this.campaignForm.get('goalEnd').value,
         MinAmount: this.campaignForm.get('minAmount').value
       }
     } as Campaign;
+    console.log(newCampaign);
     this.campaignService.createCampaign(newCampaign).subscribe(
-      campaign => this.router.navigate(['/campaign/by/', campaign.id]),
+      // campaign => this.router.navigate(['/campaign/by/', campaign.id]),
       error => console.error(error)
     );
   }
@@ -40,7 +42,8 @@ export class CreateCampaignComponent implements OnInit {
       campaignDescription: new FormControl(),
       goalStart: new FormControl(),
       goalEnd: new FormControl(),
-      minAmount: new FormControl()
+      minAmount: new FormControl(),
+      campaignUrl: new FormControl()
     });
   }
 
