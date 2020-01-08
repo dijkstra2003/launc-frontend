@@ -3,7 +3,7 @@
     <div class="col-sm-8">
       <img *ngIf="selectedCampaign !== undefined && selectedCampaign.campaignUrl !== null; else campaignImage" [src]="selectedCampaign.campaignUrl" alt="project image" style="width: 100%"/>
       <ng-template #campaignImage>
-        <img alt="project image" src='https://www.auto-haefland.nl/wp-content/uploads/2015/04/placeholder-1200x500.png' style="width: 100%"/>
+        <img alt="project image" src='../../../../assets/placeholder.png' style="width: 100%"/>
       </ng-template>
     </div>
     <div class="col-sm-4" *ngIf="dataLoaded">
