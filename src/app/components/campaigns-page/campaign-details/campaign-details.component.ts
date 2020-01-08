@@ -4,6 +4,8 @@ import { CampaignPageService } from '../campaign-page.service';
 import { Campaign } from 'src/app/models/Campaign';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
 import { Observable } from 'rxjs';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 @Component({
   selector: 'app-campaign-details',
@@ -16,7 +18,7 @@ export class CampaignDetailsComponent implements OnInit {
   selectedCampaign: Campaign;
   dataLoaded = false;
   isLoggedIn: Observable<boolean>;
-
+  progress;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -32,9 +34,14 @@ export class CampaignDetailsComponent implements OnInit {
     this.campaignService.getCampaignById(campaignIdFromUrl).subscribe(result => {
       this.selectedCampaign = result;
       this.dataLoaded = true;
+      this.progress = this.selectedCampaign.goal.progress.toString();
     });
-
     sessionStorage.setItem('selectedCampaign', campaignIdFromUrl.toString());
+  }
+
+  getPercentage() {
+    console.log(this.selectedCampaign);
+    return 50;
   }
 
   ngOnInit() {
