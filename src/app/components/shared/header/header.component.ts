@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked, AfterViewInit, Output } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { EventEmitter } from 'events';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,9 +11,10 @@ import { EventEmitter } from 'events';
 export class HeaderComponent implements OnInit, AfterViewInit {
 
   faSearch = faSearch;
+  
   @ViewChild('autofocus', {static: false}) autofocus: ElementRef;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -23,4 +24,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.autofocus.nativeElement.focus();
   }
 
+  navigateAndSearchProject(searchWord: string) {
+    this.router.navigate(['projects/search/', searchWord]);
+  }
 }

@@ -1,7 +1,9 @@
 import { CampaignPageService } from './campaign-page.service';
 import { Component, OnInit } from '@angular/core';
 import { Campaign } from 'src/app/models/Campaign';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { take, tap, map } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-campaigns-page',
@@ -10,11 +12,29 @@ import { Observable } from 'rxjs';
 })
 export class CampaignsPageComponent implements OnInit {
 
-  campaignsList: Observable<Campaign[]>;
+  searchWord;
+  campaignsList: BehaviorSubject<Campaign[]>;
+  campaignsList_1: Observable<Campaign[]>;
 
-  constructor(private campaignService: CampaignPageService) {}
+
+  constructor(
+    private campaignService: CampaignPageService,
+    private activatedRoute: ActivatedRoute,
+    ) {
+      this.campaignsList = new BehaviorSubject([]);
+    }
 
   ngOnInit() {
-    this.campaignsList = this.campaignService.getCampaigns();
+    this.searchWord = this.activatedRoute.snapshot.paramMap.get('searchWord');
+
+    if(!this.searchWord) {
+      this.campaignsList_1 = this.campaignService.getCampaigns();
+    } else {
+      this.campaignsList_1 = this.campaignService.getCampaigns().pipe(map(campaigns => { 
+        return campaigns = campaigns.filter(
+          e => e.campaignName.toLowerCase().includes(this.searchWord.toLowerCase())
+        )})
+      );
+    }
   }
 }
