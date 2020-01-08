@@ -9,7 +9,7 @@ import { routes } from 'src/environments/api-route.prod';
 })
 export class CampaignPageService {
 
-  readonly campaignsDbUrl = routes.apiHostname + 'campaign/';
+  readonly campaignsDbUrl = routes.apiHostname + '/campaign/';
 
   constructor(private http: HttpClient) { }
 

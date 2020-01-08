@@ -17,7 +17,7 @@ export class AuthenticationService {
   authenticateUser(email: string, password: string) {
     const httpOptions = new HttpHeaders();
     httpOptions.append('Content-Type',  'application/json');
-    return this.http.post(routes.apiHostname + 'users/authenticate',
+    return this.http.post(routes.apiHostname + '/users/authenticate',
       {email, password},
       { headers: httpOptions, responseType: 'text' });
   }
@@ -32,7 +32,7 @@ export class AuthenticationService {
         'Content-Type':  'application/json',
       })
     };
-    return this.http.post(routes.apiHostname + 'users', {name, email, password}, httpOptions);
+    return this.http.post(routes.apiHostname + '/users', {name, email, password}, httpOptions);
   }
 
   updateState(isLoggedIn: boolean) {
