@@ -1,0 +1,26 @@
+.rocket-wrapper {
+
+    margin: 30px auto 50px;
+    width: 250px;
+    height: 250px;
+
+    overflow: hidden;
+
+    border-radius: 100%;
+    border: #e2383c 3px solid;
+
+    img {
+        display: block;;
+
+        position: relative;
+        left: 50%;
+        height: 250px;
+
+        transform: translateX(-50%);
+    }
+}
+
+
+h1 {
+    text-align: center;
+}

@@ -32,7 +32,9 @@ export class PaymentComponent implements OnInit {
     method = method.toLowerCase();
 
     this.paymentService.initiatePayment(goalId, amount, method).subscribe(success => {
-      window.location.href = (success as any).url;
+      const payment = success as any;
+      window.localStorage.setItem('payment-id', payment.paymentId);
+      window.location.href = payment.url;
     },
     error => {
       console.log(error);
