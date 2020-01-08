@@ -7,8 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-campaigns-page',
-  templateUrl: './campaigns-page.component.html',
-  styleUrls: ['./campaigns-page.component.scss']
+  templateUrl: './campaigns-page.component.html'
 })
 export class CampaignsPageComponent implements OnInit {
 
@@ -29,7 +28,7 @@ export class CampaignsPageComponent implements OnInit {
       this.campaignsList = this.campaignService.getCampaigns();
     } else {
       this.campaignsList = this.campaignService.getCampaigns().pipe(map(campaigns => {
-        return campaigns = campaigns.filter(
+        return campaigns.filter(
           e => e.campaignName.toLowerCase().includes(this.searchWord.toLowerCase())
         ); })
       );
