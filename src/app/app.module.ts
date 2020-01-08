@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import { AuthorizeInterceptorService } from './authentication/auth-interceptor.service';
 import { PaymentComponent } from './components/payment/payment.component';
+import { PaymentStatusComponent } from './components/payment-status/payment-status.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     CampaignCardComponent,
     CampaignDetailsComponent,
     CreateCampaignComponent,
-    PaymentComponent
+    PaymentComponent,
+    PaymentStatusComponent
   ],
   imports: [
     BrowserModule,
