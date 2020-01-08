@@ -40,7 +40,6 @@ export class CampaignDetailsComponent implements OnInit {
   }
 
   getPercentage() {
-    console.log(this.selectedCampaign);
     return 50;
   }
 

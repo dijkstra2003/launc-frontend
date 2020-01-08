@@ -13,7 +13,8 @@
         <label for="description">Campaign Description</label>
         <textarea class="form-control" formControlName="campaignDescription" rows="4" placeholder="Description"></textarea>
       </div>
-      <div class="col">
+      <div class="col right">
+        <label for="">Campaign Start & End Dates</label>
         <mat-form-field class="start">
           <input matInput [matDatepicker]="startPicker" formControlName="goalStart" placeholder="Start Date">
           <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
@@ -26,9 +27,10 @@
           <mat-datepicker #endPicker></mat-datepicker>
         </mat-form-field>
 
-        <label for="campaignPhoto">Upload photo</label>
-        <input type="file" class="form-control-file" id="campaignUpload">
+        <label for="campaignPhoto">Choose photo</label>
+        <input class="form-control" formControlName="campaignUrl" placeholder="Link to your image">
       </div>
+
     </div>
     <div class="container btn-container">
       <button class="btn btn-secondary" (click)="createCampaign()">Create</button>

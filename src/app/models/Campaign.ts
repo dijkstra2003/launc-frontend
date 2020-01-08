@@ -5,7 +5,7 @@ export interface Campaign {
   campaignName?: string;
   campaignDescription?: string;
   goal?: Goal;
-  url?: string;
+  campaignUrl?: string;
   teamCampaign?: any[];
   userCampaign?: any[];
   userLikes?: any[];
