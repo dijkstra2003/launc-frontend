@@ -14,9 +14,9 @@ export class ProjectCardSmallComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   navigateToCampaign() {
-    this.router.navigate(['/campaign/by/', this.selectedCampaign.id])
+    this.router.navigate(['/campaign/by/', this.selectedCampaign.id]);
   }
 
 }
