@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CreateCampaignComponent', () => {
   let component: CreateCampaignComponent;
@@ -24,7 +25,9 @@ describe('CreateCampaignComponent', () => {
         MatFormFieldModule,
         MatDatepickerModule,
         BrowserAnimationsModule,
-        HttpClientModule]
+        HttpClientModule,
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { CampaignPageService } from '../campaign-page.service';
 import { Campaign } from 'src/app/models/Campaign';
-import { Goal } from 'src/app/models/Goal';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +14,7 @@ export class CreateCampaignComponent implements OnInit {
   campaignForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private campaignService: CampaignPageService,
     private router: Router) { }
 
