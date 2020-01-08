@@ -4,6 +4,8 @@ import { CampaignPageService } from '../campaign-page.service';
 import { Campaign } from 'src/app/models/Campaign';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
 import { Observable } from 'rxjs';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 @Component({
   selector: 'app-campaign-details',
