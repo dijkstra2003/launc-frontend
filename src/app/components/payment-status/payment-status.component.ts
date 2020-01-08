@@ -8,7 +8,7 @@ import { PaymentService } from '../payment/payment.service';
 })
 export class PaymentStatusComponent implements OnInit {
 
-  private status: 'OPEN' | 'CANCELED' | 'PENDING' | 'AUTHORIZED' | 'EXPIRED' | 'FAILED' | 'PAID';
+  public status: 'OPEN' | 'CANCELED' | 'PENDING' | 'AUTHORIZED' | 'EXPIRED' | 'FAILED' | 'PAID';
 
   constructor(private paymentService: PaymentService) { }
 
@@ -20,5 +20,6 @@ export class PaymentStatusComponent implements OnInit {
       this.status = status.status;
     });
   }
+
 
 }
