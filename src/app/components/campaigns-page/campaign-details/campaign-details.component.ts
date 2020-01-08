@@ -16,7 +16,7 @@ export class CampaignDetailsComponent implements OnInit {
   selectedCampaign: Campaign;
   dataLoaded = false;
   isLoggedIn: Observable<boolean>;
-
+  progress;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -32,9 +32,14 @@ export class CampaignDetailsComponent implements OnInit {
     this.campaignService.getCampaignById(campaignIdFromUrl).subscribe(result => {
       this.selectedCampaign = result;
       this.dataLoaded = true;
+      this.progress = this.selectedCampaign.goal.progress.toString();
     });
-
     sessionStorage.setItem('selectedCampaign', campaignIdFromUrl.toString());
+  }
+
+  getPercentage() {
+    console.log(this.selectedCampaign);
+    return 50;
   }
 
   ngOnInit() {
