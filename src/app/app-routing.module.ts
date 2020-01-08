@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CampaignDetailsComponent } from './components/campaigns-page/campaign-details/campaign-details.component';
 import { CreateCampaignComponent } from './components/campaigns-page/create-campaign/create-campaign.component';
 import { AuthGuard } from './authentication/authentication.guard';
+import { PaymentStatusComponent } from './components/payment-status/payment-status.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'projects', component: CampaignsPageComponent},
   { path: 'campaign/by/:id', component: CampaignDetailsComponent},
   { path: 'campaign/create', component: CreateCampaignComponent, canActivate: [AuthGuard]},
+  { path: 'payment', component: PaymentStatusComponent, canActivate: [AuthGuard]},
   { path: '', component: HomeComponent }
 ];
 
