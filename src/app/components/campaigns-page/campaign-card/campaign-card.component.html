@@ -1,5 +1,6 @@
 <div class="card">
-    <img src='https://www.auto-haefland.nl/wp-content/uploads/2015/04/placeholder-1200x500.png' style="width: 100%"/>
+    <img *ngIf="selectedCampaign.campaignUrl !== ''; else campaignImage" src='https://www.auto-haefland.nl/wp-content/uploads/2015/04/placeholder-1200x500.png' style="width: 100%"/>
+    <img #campaignImage [src]={{selectionCampaign.campaignUrl}} style="width: 100%"/>
     <div class="card-body d-flex flex-column">
       <h5 class="card-title">{{selectedCampaign.campaignName}}</h5>
       <p class="card-text">{{selectedCampaign.campaignDescription}}</p>
