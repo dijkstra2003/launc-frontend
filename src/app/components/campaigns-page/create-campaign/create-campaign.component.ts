@@ -31,7 +31,7 @@ export class CreateCampaignComponent implements OnInit {
     } as Campaign;
     console.log(newCampaign);
     this.campaignService.createCampaign(newCampaign).subscribe(
-      // campaign => this.router.navigate(['/campaign/by/', campaign.id]),
+      campaign => this.router.navigate(['/campaign/by/', campaign.id]),
       error => console.error(error)
     );
   }
