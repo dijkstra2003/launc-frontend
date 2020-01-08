@@ -13,13 +13,17 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
 
+  //  on success set localstorage
   authenticateUser(email: string, password: string) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        })
-      };
-    return this.http.post(routes.apiHostname + 'users/authenticate', {email, password}, httpOptions);
+    const httpOptions = new HttpHeaders();
+    httpOptions.append('Content-Type',  'application/json');
+    return this.http.post(routes.apiHostname + '/users/authenticate',
+      {email, password},
+      { headers: httpOptions, responseType: 'text' });
+  }
+
+  isAuthenticated() {
+    return this.isLoggedIn;
   }
 
   registerUser(name: string, email: string, password: string) {
@@ -28,8 +32,7 @@ export class AuthenticationService {
         'Content-Type':  'application/json',
       })
     };
-
-    return this.http.post(routes.apiHostname + 'users', {name, email, password}, httpOptions);
+    return this.http.post(routes.apiHostname + '/users', {name, email, password}, httpOptions);
   }
 
   updateState(isLoggedIn: boolean) {

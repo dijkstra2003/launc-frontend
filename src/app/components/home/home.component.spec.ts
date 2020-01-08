@@ -6,6 +6,8 @@ import { FilterPipe } from '../../../shared/filter.pipe';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ProjectCardSmallComponent } from '../project/project-card-small/project-card-small.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -15,7 +17,9 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         FontAwesomeModule,
-        FormsModule
+        FormsModule,
+        HttpClientTestingModule,
+        RouterTestingModule
       ],
       declarations: [
         HomeComponent,

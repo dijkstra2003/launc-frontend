@@ -1,8 +1,8 @@
 <div class="card">
-    <img [src]="campaignImage" class="card-img-top" alt="...">
+    <img src='https://www.auto-haefland.nl/wp-content/uploads/2015/04/placeholder-1200x500.png' style="width: 100%" alt="image logo"/>
     <div class="card-body d-flex flex-column">
-      <h5 class="card-title">{{campaignName}}</h5>
-      <p class="card-text">{{campaignDescription}}</p>
-      <p [routerLink]="campaignUrl" class="btn mt-auto campaign-button">Go somewhere</p>
+      <h5 class="card-title">{{selectedCampaign.campaignName}}</h5>
+      <p class="card-text">{{selectedCampaign.campaignDescription}}</p>
+      <p (click)="navigateToCampaign()" class="btn mt-auto campaign-button">visit project</p>
     </div>
 </div>

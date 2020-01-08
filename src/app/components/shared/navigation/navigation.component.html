@@ -9,14 +9,14 @@
             <span class="navbar-brand mb-0 h1"><img src="../../../../assets/logo-los.png" width="40" height="40" alt="launc-logo"></span>
         </a>     
         <ul class="nav navbar-nav navbar-right responsive">
-                <a class="nav-link" [routerLink]="['/login']">sign in</a>
+            <a class="nav-link" *ngIf="(isLoggedIn | async) === false;" [routerLink]="['/login']">sign in</a>
+            <a class="nav-link" [routerLink]="['/']" (click)="logout()" *ngIf="(isLoggedIn | async) === true;">logout</a>
         </ul>
         <div class="collapse navbar-collapse" id="navbartoggle">   
             <ul class="navbar-nav nav">
                 <a class="nav-link" [routerLink]="['/']">home</a>
                 <a class="nav-link" [routerLink]="['/projects']">projects</a>
-                <a class="nav-link" [routerLink]="['/']">menu item 3</a>
-                <a class="nav-link" [routerLink]="['/']">menu item 4</a>
+                <a class="nav-link" [routerLink]="['/campaign/create']"  *ngIf="(isLoggedIn | async) === true;" >create campaign</a>
             </ul>
         </div>
         <ul class="nav navbar-nav navbar-right normal">

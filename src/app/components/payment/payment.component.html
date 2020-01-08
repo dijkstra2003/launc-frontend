@@ -1,0 +1,15 @@
+<div id="paymentMethods" class="collapse mt-3">
+    <div class="input-group"> 
+        <div class="input-group-prepend">
+            <span class="input-group-text">€</span>
+        </div>
+        <input min="0" type="number" step="1" class="form-control currency" id="euros" placeholder="10" #euros/>
+        <input min="0" type="number" step="1" class="form-control currency" id="cents" placeholder="00" #cents/>
+    </div>
+    Choose a payment method:
+    <select #method>
+        <option>iDeal</option>
+        <option>PayPal</option>
+    </select>
+    <button class="btn btn-secondary mt-3 pay-button" (click)="startPayment(euros.value, cents.value, method.value)">continue</button>
+</div>

@@ -1,0 +1,19 @@
+<div *ngIf="status == 'PAID'; else paymentOther">
+
+    <div class="rocket-wrapper success">
+        <img src="/assets/rocket-success.gif" alt="Rocket">
+    </div>
+
+    <h1>Uw betaling is verwerkt!</h1>
+
+</div>
+
+<ng-template #paymentOther>
+
+    <div class="rocket-wrapper other">
+        <img src="/assets/rocket-success.gif" alt="Rocket">
+    </div>
+
+    <h1>Uw betaling is <strong>niet</strong> verwerkt</h1>
+
+</ng-template>

@@ -1,4 +1,5 @@
 @import "./shared/variables.scss";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
     background-color: $white !important;
@@ -20,4 +21,14 @@ input, button {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+}
+
+html {
+    height: 100%;
+}
+
+body { 
+    margin: 0; 
+    font-family: Roboto, 
+    "Helvetica Neue", sans-serif; 
 }

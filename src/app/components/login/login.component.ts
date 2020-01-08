@@ -25,10 +25,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   login(email, password) {
     this.authenticationService.authenticateUser(email, password).subscribe(success => {
-      const response: User = success as User;
-
-      localStorage.setItem('JwtToken', response.jwtToken);
-      localStorage.setItem('name', response.name);
+      const user = JSON.parse(success);
+      localStorage.setItem('JwtToken', user.jwtToken);
+      localStorage.setItem('name', user.name);
 
       this.authenticationService.updateState(true);
       this.router.navigate(['/']);

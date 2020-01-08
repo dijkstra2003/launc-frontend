@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Campaign } from 'src/app/models/Campaign';
+import { CampaignsPageComponent } from '../campaigns-page.component';
 
 @Component({
   selector: 'app-campaign-card',
@@ -7,13 +10,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CampaignCardComponent implements OnInit {
 
-  @Input() campaignName: string;
-  @Input() campaignDescription: string;
-  @Input() campaignImage: string;
-  @Input() campaignUrl: string;
+  @Input() selectedCampaign = {} as Campaign;
 
-  constructor() {
+  constructor(private router: Router) {
+  }
 
+  navigateToCampaign() {
+    this.router.navigate(['campaign/by/', this.selectedCampaign.id]);
   }
 
   ngOnInit() {
