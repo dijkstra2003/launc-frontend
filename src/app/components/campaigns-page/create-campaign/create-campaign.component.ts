@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { CampaignPageService } from '../campaign-page.service';
 import { Campaign } from 'src/app/models/Campaign';
 import { Goal } from 'src/app/models/Goal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-campaign',
@@ -13,7 +14,10 @@ export class CreateCampaignComponent implements OnInit {
 
   campaignForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private campaignService: CampaignPageService) { }
+  constructor(
+    private fb: FormBuilder, 
+    private campaignService: CampaignPageService,
+    private router: Router) { }
 
   createCampaign() {
     const newCampaign = {
@@ -26,7 +30,7 @@ export class CreateCampaignComponent implements OnInit {
       }
     } as Campaign;
     this.campaignService.createCampaign(newCampaign).subscribe(
-      result => console.log(result),
+      campaign => this.router.navigate(['/campaign/by/', campaign.id]),
       error => console.error(error)
     );
   }
