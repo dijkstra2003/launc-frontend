@@ -10,6 +10,7 @@ mat-form-field.start{
   margin-right: 100px;
   margin-top: 25px;
 }
+
 div.details{
   label{
     margin-top: 20px;
@@ -20,5 +21,16 @@ div.btn-container{
   margin-top: 50px;
   button:first-child{
     margin-right: 20px;
+  }
+}
+div.right {
+  label {
+    margin-top: 25px;
+    display: block;
+  }
+}
+div.right {
+  mat-form-field {
+    margin-top: 0;
   }
 }
